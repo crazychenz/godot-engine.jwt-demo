@@ -1,0 +1,306 @@
+[gd_scene load_steps=2 format=3 uid="uid://ls5tmrw4bhub"]
+
+[ext_resource type="Script" path="res://TokenTest.gd" id="1_tbtxy"]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 60.0
+offset_bottom = -3.0
+script = ExtResource( "1_tbtxy" )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="."]
+offset_right = 1022.0
+offset_bottom = 596.0
+tab_alignment = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RS256" type="VBoxContainer" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 41.0
+offset_right = -4.0
+offset_bottom = -4.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/RS256"]
+offset_right = 1014.0
+offset_bottom = 510.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/RS256/HBoxContainer"]
+offset_right = 505.0
+offset_bottom = 510.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TokenLabel" type="Label" parent="TabContainer/RS256/HBoxContainer/VBoxContainer2"]
+offset_right = 505.0
+offset_bottom = 26.0
+text = "Token"
+
+[node name="RS256Token" type="TextEdit" parent="TabContainer/RS256/HBoxContainer/VBoxContainer2"]
+offset_top = 30.0
+offset_right = 505.0
+offset_bottom = 510.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 16
+wrap_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/RS256/HBoxContainer"]
+offset_left = 509.0
+offset_right = 1014.0
+offset_bottom = 510.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HeaderLabel" type="Label" parent="TabContainer/RS256/HBoxContainer/VBoxContainer"]
+offset_right = 505.0
+offset_bottom = 26.0
+text = "Header"
+
+[node name="RS256Header" type="TextEdit" parent="TabContainer/RS256/HBoxContainer/VBoxContainer"]
+offset_top = 30.0
+offset_right = 505.0
+offset_bottom = 90.0
+rect_min_size = Vector2(0, 60)
+size_flags_horizontal = 3
+theme_override_colors/caret_color = Color(0, 1, 0.172549, 1)
+caret_blink = true
+
+[node name="PayloadLabel" type="Label" parent="TabContainer/RS256/HBoxContainer/VBoxContainer"]
+offset_top = 94.0
+offset_right = 505.0
+offset_bottom = 120.0
+text = "Payload"
+
+[node name="RS256Payload" type="TextEdit" parent="TabContainer/RS256/HBoxContainer/VBoxContainer"]
+offset_top = 124.0
+offset_right = 505.0
+offset_bottom = 184.0
+rect_min_size = Vector2(0, 60)
+size_flags_horizontal = 3
+
+[node name="AlgContainer" type="TabContainer" parent="TabContainer/RS256/HBoxContainer/VBoxContainer"]
+offset_top = 188.0
+offset_right = 505.0
+offset_bottom = 510.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RS256 Algorithm" type="VBoxContainer" parent="TabContainer/RS256/HBoxContainer/VBoxContainer/AlgContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 41.0
+offset_right = -4.0
+offset_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PublicKeyPEMLabel" type="Label" parent="TabContainer/RS256/HBoxContainer/VBoxContainer/AlgContainer/RS256 Algorithm"]
+offset_right = 497.0
+offset_bottom = 26.0
+text = "Public Key PEM"
+
+[node name="PublicKeyPEM" type="TextEdit" parent="TabContainer/RS256/HBoxContainer/VBoxContainer/AlgContainer/RS256 Algorithm"]
+offset_top = 30.0
+offset_right = 497.0
+offset_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PrivateKeyPEMLabel" type="Label" parent="TabContainer/RS256/HBoxContainer/VBoxContainer/AlgContainer/RS256 Algorithm"]
+offset_top = 140.0
+offset_right = 497.0
+offset_bottom = 166.0
+text = "Private Key PEM"
+
+[node name="PrivateKeyPEM" type="TextEdit" parent="TabContainer/RS256/HBoxContainer/VBoxContainer/AlgContainer/RS256 Algorithm"]
+offset_top = 170.0
+offset_right = 497.0
+offset_bottom = 277.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/RS256/HBoxContainer/VBoxContainer/AlgContainer/RS256 Algorithm"]
+visible = false
+offset_top = 147.0
+offset_right = 497.0
+offset_bottom = 176.0
+
+[node name="GenerateRS256Keys" type="Button" parent="TabContainer/RS256/HBoxContainer/VBoxContainer/AlgContainer/RS256 Algorithm/HBoxContainer"]
+offset_right = 246.0
+offset_bottom = 29.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Generate Keys"
+
+[node name="GenerateRS256Token" type="Button" parent="TabContainer/RS256/HBoxContainer/VBoxContainer/AlgContainer/RS256 Algorithm/HBoxContainer"]
+offset_left = 250.0
+offset_right = 497.0
+offset_bottom = 29.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Generate Token Data"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RS256Verification" type="Label" parent="TabContainer/RS256"]
+offset_top = 514.0
+offset_right = 1014.0
+offset_bottom = 551.0
+theme_override_font_sizes/font_size = 24
+text = "Not Verified"
+
+[node name="HS256" type="VBoxContainer" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 41.0
+offset_right = -4.0
+offset_bottom = -4.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/HS256"]
+offset_right = 1014.0
+offset_bottom = 489.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/HS256/HBoxContainer2"]
+offset_right = 505.0
+offset_bottom = 489.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TokenLabel" type="Label" parent="TabContainer/HS256/HBoxContainer2/VBoxContainer2"]
+offset_right = 505.0
+offset_bottom = 26.0
+text = "Token"
+
+[node name="HS256Token" type="TextEdit" parent="TabContainer/HS256/HBoxContainer2/VBoxContainer2"]
+offset_top = 30.0
+offset_right = 505.0
+offset_bottom = 489.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 16
+wrap_mode = 1
+scroll_vertical = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/HS256/HBoxContainer2"]
+offset_left = 509.0
+offset_right = 1014.0
+offset_bottom = 489.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HeaderLabel" type="Label" parent="TabContainer/HS256/HBoxContainer2/VBoxContainer"]
+offset_right = 505.0
+offset_bottom = 26.0
+text = "Header"
+
+[node name="HS256Header" type="TextEdit" parent="TabContainer/HS256/HBoxContainer2/VBoxContainer"]
+offset_top = 30.0
+offset_right = 505.0
+offset_bottom = 130.0
+rect_min_size = Vector2(0, 60)
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 16
+
+[node name="PayloadLabel" type="Label" parent="TabContainer/HS256/HBoxContainer2/VBoxContainer"]
+offset_top = 134.0
+offset_right = 505.0
+offset_bottom = 160.0
+text = "Payload"
+
+[node name="HS256Payload" type="TextEdit" parent="TabContainer/HS256/HBoxContainer2/VBoxContainer"]
+offset_top = 164.0
+offset_right = 505.0
+offset_bottom = 264.0
+rect_min_size = Vector2(0, 60)
+size_flags_horizontal = 3
+
+[node name="AlgContainer" type="TabContainer" parent="TabContainer/HS256/HBoxContainer2/VBoxContainer"]
+offset_top = 268.0
+offset_right = 505.0
+offset_bottom = 489.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HS256 Algorithm" type="VBoxContainer" parent="TabContainer/HS256/HBoxContainer2/VBoxContainer/AlgContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 41.0
+offset_right = -4.0
+offset_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SecretLabel" type="Label" parent="TabContainer/HS256/HBoxContainer2/VBoxContainer/AlgContainer/HS256 Algorithm"]
+offset_right = 497.0
+offset_bottom = 26.0
+text = "Secret"
+
+[node name="Secret" type="TextEdit" parent="TabContainer/HS256/HBoxContainer2/VBoxContainer/AlgContainer/HS256 Algorithm"]
+offset_top = 30.0
+offset_right = 497.0
+offset_bottom = 176.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/HS256/HBoxContainer2/VBoxContainer/AlgContainer/HS256 Algorithm"]
+visible = false
+offset_top = 147.0
+offset_right = 497.0
+offset_bottom = 176.0
+
+[node name="GenerateHS256Secret" type="Button" parent="TabContainer/HS256/HBoxContainer2/VBoxContainer/AlgContainer/HS256 Algorithm/HBoxContainer"]
+offset_right = 246.0
+offset_bottom = 29.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Generate Secret"
+
+[node name="GenerateHS256Token" type="Button" parent="TabContainer/HS256/HBoxContainer2/VBoxContainer/AlgContainer/HS256 Algorithm/HBoxContainer"]
+offset_left = 250.0
+offset_right = 497.0
+offset_bottom = 29.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Generate Token Data"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HS256Verification" type="Label" parent="TabContainer/HS256"]
+offset_top = 493.0
+offset_right = 1014.0
+offset_bottom = 551.0
+theme_override_font_sizes/font_size = 24
+text = "Not Verified"

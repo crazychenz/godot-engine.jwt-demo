@@ -1,0 +1,84 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "RefCounted",
+"class": &"JWT",
+"language": &"GDScript",
+"path": "res://addons/jwt/src/JWT.gd"
+}, {
+"base": "RefCounted",
+"class": &"JWTAlgorithm",
+"language": &"GDScript",
+"path": "res://addons/jwt/src/JWTAlgorithm.gd"
+}, {
+"base": "RefCounted",
+"class": &"JWTAlgorithmBuilder",
+"language": &"GDScript",
+"path": "res://addons/jwt/src/JWTAlgorithmBuilder.gd"
+}, {
+"base": "RefCounted",
+"class": &"JWTBaseBuilder",
+"language": &"GDScript",
+"path": "res://addons/jwt/src/JWTBaseBuilder.gd"
+}, {
+"base": "JWTBaseBuilder",
+"class": &"JWTBuilder",
+"language": &"GDScript",
+"path": "res://addons/jwt/src/JWTBuilder.gd"
+}, {
+"base": "RefCounted",
+"class": &"JWTClaims",
+"language": &"GDScript",
+"path": "res://addons/jwt/src/JWTClaims.gd"
+}, {
+"base": "RefCounted",
+"class": &"JWTDecoder",
+"language": &"GDScript",
+"path": "res://addons/jwt/src/JWTDecoder.gd"
+}, {
+"base": "RefCounted",
+"class": &"JWTUtils",
+"language": &"GDScript",
+"path": "res://addons/jwt/src/JWTUtils.gd"
+}, {
+"base": "RefCounted",
+"class": &"JWTVerifier",
+"language": &"GDScript",
+"path": "res://addons/jwt/src/JWTVerifier.gd"
+}, {
+"base": "JWTBaseBuilder",
+"class": &"JWTVerifierBuilder",
+"language": &"GDScript",
+"path": "res://addons/jwt/src/JWTVerifierBuilder.gd"
+}]
+_global_script_class_icons={
+"JWT": "",
+"JWTAlgorithm": "",
+"JWTAlgorithmBuilder": "",
+"JWTBaseBuilder": "",
+"JWTBuilder": "",
+"JWTClaims": "",
+"JWTDecoder": "",
+"JWTUtils": "",
+"JWTVerifier": "",
+"JWTVerifierBuilder": ""
+}
+
+[application]
+
+config/name="Godot-engine.jwt-demo"
+run/main_scene="res://JWTTesting.tscn"
+config/icon="res://icon.png"
+config/features=PackedStringArray("4.0", "Vulkan Clustered")
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/jwt/plugin.cfg")
